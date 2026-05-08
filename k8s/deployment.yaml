@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contract-processor
+spec:
+  replicas: 3
+  containers:
+  - name: app
+    image: contract-app:v1.2.0
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
